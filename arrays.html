@@ -11,7 +11,25 @@
       alert(alumna.nombre)
       //cómo juntar los objetos nombre y apellido?  (alumna.nombre + alumna.apellido) queda sin espacio
      
-     
+     var personas = [{
+		nombre: "Juan", 
+		apellido: "Pedro", 
+		edad: 40
+	},{
+		nombre: "Ana",
+		apellido: "García",
+		edad: 50
+	},{
+		nombre: "Agustina",
+		apellido: "Romero",
+		edad: 25
+	}
+	]
+
+personas.sort()
+var ultimo = personas[ personas.length - 1]; 
+alert(ultimo.nombre) // personas.length no es 3? por qué muestra "agustina" como resultado? 
+	  
   </script>
      
 </body>
