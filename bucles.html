@@ -29,9 +29,49 @@
 
     document.getElementById("caja").innerHTML = mensaje;
     
+	  
+// ------------------------------------ // while
+	  
+	  
+	var empleados = ["juan", "roberto", "maria", "ana", "pedro"];
+	var mensaje = "";	
+
+	var i = 0;
+	while(i < empleados.length) {
+		mensaje += empleados[i] + i++ + "<br>"
+		}
+
+	document.getElementById("caja").innerHTML = mensaje
+	  //devuelve: juan 0roberto 1maria 2ana 3pedro 4 ??
     
+	  
+// ----------------------- //
+	  
+	  var lista = [{
+			nombre: "jazmin",
+			edad:	25
+		},{	
+			nombre: "luciano",
+			eda: 30
+		},{
+			nombre: "juana",
+			edad: 80
+		},{
+			nombre: "leon",
+			edad: 56
+		}
+	]
+	
+	var mensaje = "";
+
+	var i = 0;
+	while (i < lista.length) {
+		mensaje += lista[i].nombre + "<br>" + i++
+	}
+
+	document.getElementById("caja").innerHTML = mensaje;
     
-    
+	// sigue saliendo mal, da de resultado: jazmin 0luciano 1juana 2leon 3 ??
     
   </script>
 </body>
