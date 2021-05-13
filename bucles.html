@@ -7,35 +7,39 @@
   <div id="caja"></div>
 
   <script>
-	  
+
     // --------------------------- // for #1 ejercicio
-    
+
     var gente = ["lujan", "rita", "alex", "erik"];
     var mensaje = ""; //que función cumple var mensaje acá? se puede sacar?
+		// lo mismo que dije en fecha.html, fijate que te hablé de las variables globales y locales
 
     for(var i = 0; i < 2; i ++)
 
     alert(gente[i]);
-  
+
   // ---------------------------- // for #2 ejercicio
-    
-    
+
+
     var gente = ["lujan", "rita", "alex", "erik"];
     var mensaje = "";
 
     for(var i = 0; i < 2; i++)
-    mensaje += gente[i] // por qué += ? 
-    
-    //sin el +, muestra solo "rita"... por qué no muestra el índice 0? 
+    mensaje += gente[i] // por qué += ?
+		// += es equivalente a mensaje += mensaje + gente[i]
+		// En mensaje estas "juntando" los nombres, los estas sumando/concatenando.
 
+    //sin el +, muestra solo "rita"... por qué no muestra el índice 0?
+		// muestra rita porque el for hace dos ciclos: i=0 lujan, i=1 rita
+		// si le sacás el += y le dejas el =, te quedas con el ultimo valor, es decir rita
     document.getElementById("caja").innerHTML = mensaje;
-    
-	  
+
+
 // ------------------------------------ // while #1 ejercicio
-	  
-	  
+
+
 	var empleados = ["juan", "roberto", "maria", "ana", "pedro"];
-	var mensaje = "";	
+	var mensaje = "";
 
 	var i = 0;
 	while(i < empleados.length) {
@@ -44,14 +48,14 @@
 
 	document.getElementById("caja").innerHTML = mensaje
 	  //devuelve: juan 0roberto 1maria 2ana 3pedro 4 ??
-    
-	  
+
+
 // --------------------------------- // while #2 ejercicio
-	  
+
 	  var lista = [{
 			nombre: "jazmin",
 			edad:	90
-		},{	
+		},{
 			nombre: "luciano",
 			eda: 70
 		},{
@@ -62,7 +66,7 @@
 			edad: 56
 		}
 	]
-	
+
 	var mensaje = "";
 
 	var i = 0;
@@ -71,35 +75,35 @@
 	}
 
 	document.getElementById("caja").innerHTML = mensaje;
-    
+
 	// sigue saliendo mal, da de resultado: jazmin 0luciano 1juana 2leon 3 ??
-	  
-	  
+
+
 	// ------------------------------------ //
-	  
-	  
+
+
 	//no me queda claro por qué hay objetos que tienen "" y otros que no, por ej:
-	  
-	  
-	var personas = [{
-	"nombre": "jazmin", //por qué en otros arrays con objetos no se usa ""?
-	"apellido": "durand",
-	"edad": 25
-},{
-	"nombre": "luciano",
-	"apellido": "martinez",
-	"edad": 84
-},{
-	"nombre": "maria",
-	"apellido": "lujan",
-	"edad": 36
-}
-			   
-	for(var i = 0; i < personas.length; i++){
-		console.log(personas[i]["nombre"] + " " + personas[i]["apellido"]+ " " + personas[i]["edad"])
-	}	   
-	  
-	
+
+
+// 	var personas = [{
+// 	"nombre": "jazmin", //por qué en otros arrays con objetos no se usa ""?
+// 	"apellido": "durand",
+// 	"edad": 25
+// },{
+// 	"nombre": "luciano",
+// 	"apellido": "martinez",
+// 	"edad": 84
+// },{
+// 	"nombre": "maria",
+// 	"apellido": "lujan",
+// 	"edad": 36
+// }
+
+// 	for(var i = 0; i < personas.length; i++){
+// 		console.log(personas[i]["nombre"] + " " + personas[i]["apellido"]+ " " + personas[i]["edad"])
+// 	}
+
+
   </script>
 </body>
 </html>

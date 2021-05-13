@@ -5,10 +5,18 @@
 </head>
 <body>
 	<p id="demo"></p>
- 
+
  <script>
  var hoy = new Date();
-	var dia = ""; // por qué se incluye? si no cambia nada si se saca? 
+	var dia = ""; // por qué se incluye? si no cambia nada si se saca?
+
+	/* Si lo declaras, estas declarando una variable local,
+	* es decir que cuando termina de ejecutar tu script la variable se libera y se pierde
+	* para siempre.
+	* Si no declaras la variable, dia va a ser una variable global, que vive por siempre
+	* y te persigue hasta en tus sueños. Por eso es no recomendado usar variables globales
+	* salvo en casos muy específicos.
+	*/
 
 	switch(hoy.getDay()){
 		case 0:
@@ -40,8 +48,11 @@
 	}
 
 	 // por qué se usa innerHTML? es el estándar? si innerText lo muestra también
+	 // con innerHTML podrias ponerle html, por ejemplo <div>hoy es martes</div>
+	 // con innterText solo texto (un string). Acá sería más correcto usar innerText porque
+	 // Tu intención es meter solo texto
 	document.getElementById("demo").innerHTML = "hoy es " + dia;
-  
+
   </script>
   </body>
   </html>
