@@ -1,51 +1,109 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Majar</title>
 </head>
 <body>
+	<script>
+		(function() {
+			var alumna = {nombre: "Jazmin", apellido: "Durand"};
+			console.log('alumna.nombre: ', alumna.nombre)
 
-  <script>
+			// cómo juntar los objetos nombre y apellido?  (alumna.nombre + alumna.apellido) queda sin espacio
 
-    var alumna = {nombre: "Jazmin", apellido: "Durand"};
-      alert(alumna.nombre)
-      //cómo juntar los objetos nombre y apellido?  (alumna.nombre + alumna.apellido) queda sin espacio
-     
-     var personas = [{
-		nombre: "Juan", 
-		apellido: "Pedro", 
-		edad: 40
-	},{
-		nombre: "Marta",
-		apellido: "García",
-		edad: 50
-	},{
-		nombre: "Agustina",
-		apellido: "Romero",
-		edad: 25
-	}
-	]
+			/* Manu
+			*  Tenes varias opciones, estas son algunas:
+			*  1. var nombreCompleto = alumna.nombre + ' ' + alumna.apellido;
+			*  2. var nombreCompleto = alumna.nombre + ' ' + alumna.apellido;
+			*
+			*  Busca "string concatenation javascript" en google.
+			*  Asi se llama lo que queres hacer, concatenar strings.
+			*/
 
-	personas.sort()
-	var ultimo = personas[ personas.length - 1]; 
-	alert(ultimo.nombre) // personas.length no es 3? por qué muestra "agustina" como resultado? 
+			var nombreCompleto = alumna.nombre + ' ' + alumna.apellido;
+			console.log('Nombre completo: ', nombreCompleto);
 
-	   
-	  
-	var sectorA = ["roberto", "eduardo", "ana", "maria"]
-       	sectorA.slice(2); //funciona si lo pongo en una variable... por qué no funciona sin una?
-        alert(sectorA)
-	
-	  
-	  
-	  
-	  
-	  
-	  
-	
-	  
-	  
-  </script>
-     
+
+			var personas = [{
+					nombre: "Juan",
+					apellido: "Pedro",
+					edad: 40
+				},{
+					nombre: "Marta",
+					apellido: "García",
+					edad: 50
+				},{
+					nombre: "Agustina",
+					apellido: "Romero",
+					edad: 25
+				}
+			];
+
+			personas.sort();
+			/* Manu: Este sort no hace nada porque no sabe como ordenar las personas
+			*    Cuando haces un sort de enteros o letras, eso si lo sabe ordenar.
+			*    Pero los elemntos de este array son objetos { nombre, apellido, edad }
+			*    Deberias pasarle una funcion al sort, mira mas abajo lo escribi
+			*/
+
+			var ultimo = personas[personas.length - 1];
+			console.log('(sin ordenar) ultimo.nombre: ', ultimo.nombre)
+
+			// personas.length no es 3? por qué muestra "agustina" como resultado?
+			console.log('Cantidad de personas: ', personas.length)
+			// Manu: Si, es 3. Fijate la explicacion de sort mas arriba.
+
+			personas = personas.sort(function(personaA, personaB) {
+				// Esta funcion se encarga de decidir si personaA tiene que ir antes o despues de personaB
+
+				// Si devuelvo -1 significa que personaA va antes que personaB, es decir no tengo que invertir el valor
+				// return -1;
+
+				// Si devuelvo 1 significa que personaA va despues que personaB, es decir invierte su valor
+				// return 1;
+				// Leete esto https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
+				// Busca compareFunction
+
+				// Si quiero ordenar por NOMBRE, entonces:
+				if (personaA.nombre > personaB.nombre) {
+					/* Busca "string compare javascript" en google
+					*   Y te diria que juegues con cosas como esto por consola: "Agustina" > "Juan", "B" > "A", etc
+					*   eso te devuelve false/true en base al resultado
+					*   Volviendo al sort, si personaA.nombre > personaB.nombre significa que personaA
+					*   tiene un nombre que es mayor al de la persona B. Un ejemplo es Juan es mayor a Agustina porque J > A,
+					*  es decir la J viene despues de la A y tiene un mayor valor
+					*/
+				// Entonces si persona A es mayor a B, queremos invertir el resultado, devuelvo 1
+				return 1;
+				}
+
+				// Si llego hasta aca significa que persona A no tiene nombre mayor a persona B
+				// Entonce no invierto nada, devuelvo -1
+				return -1;
+			});
+
+			ultimo = personas[personas.length - 1];
+			console.log('(personas ordenadas) ultimo.nombre: ', ultimo.nombre);
+
+
+			// ************************************************************************
+			var sectorA = ["roberto", "eduardo", "ana", "maria"]
+			sectorA.slice(2); //funciona si lo pongo en una variable... por qué no funciona sin una?
+			console.log(sectorA);
+
+			// Manu: lo que hace slice es modificar el array y devolver uno nuevo. Con devolver me refiero a que
+			// el resultado si no lo asignas a una variable, se pierde. El nuevo array que genero no lo asignas a nada
+			// Pensa en la suma:
+			var numeroCualquiera = 5;
+			numeroCualquiera + 3; // Esto le suma 3, pero con el resultado no hace nada
+			console.log('numeroCualquiera: ', numeroCualquiera);
+			// Ahora si le hago la asignacion:
+			numeroCualquiera = numeroCualquiera + 3;
+			console.log('nuevo numeroCualquiera: ', numeroCualquiera);
+
+
+		})();
+	</script>
+
 </body>
 </html>
