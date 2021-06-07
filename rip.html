@@ -31,12 +31,28 @@
           alert()
       }
         
-    </script>       
+      
         
-        -----------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------
         
-   
+/** no es una pregunta, más bien una duda:  mostrarProducto(nombre) está bien escrita antes de que se declare la función, o
+    es mejor escribirlo después (al final)? **/
+  
 
+        var nombre = "chocolate";
+
+        if (confirm("desea saber el nombre del producto?")) {
+            alert("el nombre del producto es: " + nombre);
+            nombre = prompt("ingrese otro nombre de producto");
+        }
+
+        mostrarProducto(nombre);
+
+        function mostrarProducto(producto){
+            alert("el nombre es: " + producto)
+        }
+
+      </script> 
 </body>
 </html>
         
