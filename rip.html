@@ -79,14 +79,63 @@
         document.writeln("precio sin impuesto: $" + precio);
         document.writeln("precio con impuesto: $" + precioConImpuesto);
         
+      //---------------------------------------------------------------------------------------------------------------------------------------
         
+        /**[4ta consulta]
+            El ejercicio pide que cada vez que se haga click en cada botón, cambie el color de fondo de la caja, junto con el mensajito de "el color es..."
+            Pero no sé como hacer para hacer que todos cambien de color y no sólo uno?
+        **/
         
-        
-        
-        
-        
-        
-      </script> 
+    <style>
+        #caja {
+            border: 2px solid;
+            width: 10%;
+            height: 20px;
+
+        }
+
+        .azul:hover {
+            background-color: lightseagreen;
+        }
+
+        .rojo:hover {
+            background-color: lightsalmon;
+        }
+
+        .verde:hover {
+            background-color: lightgreen;
+        }
+
+        .rosa:hover {
+            background-color: lightpink;
+        }
+
+
+    </style>
+ 
+</head>
+<body>
+    <p id="caja"></p>
+    <button class="azul" onclick="changeColor(), color('Blue')">Blue</button>
+    <button class="rojo" onclick="changeColor(), color('Red')">Red</button>
+    <button class="verde" onclick="changeColor(), color('Green')">Green</button>
+    <button class="rosa" onclick="changeColor(), color('Pink')">Pink</button>
+    <script>
+
+   
+
+        function color(nombre)  {
+            document.getElementById("caja").innerHTML = "el color es " + nombre; 
+        }
+
+        function changeColor(){
+           document.getElementById("caja").style.backgroundColor = "blue";
+        }
+
+    </script>
+
+
+    
 </body>
 </html>
         
