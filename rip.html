@@ -33,7 +33,7 @@
         
       
         
-----------------------------------------------------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------------------------------------------
         
 /** no es una pregunta, más bien una duda:  mostrarProducto(nombre) está bien escrita antes de que se declare la función, o
     es mejor escribirlo después (al final)? **/
@@ -52,6 +52,36 @@
             alert("el nombre es: " + producto)
         }
 
+        
+  // --------------------------------------------------------------------------------------------------------------------------------------
+        
+        /**No entiendo cómo la variable precioConImpuesto es global... no está solo dentro de la función mostrarProducto? no es local?
+        por qué se puede llamar por fuera de la función? **/
+        
+        var nombre = prompt("ingrese nombre:");
+        var marca = prompt("ingrese marca:");
+        var precio = prompt("ingrese precio:");
+
+        mostrarProducto();
+
+        function mostrarProducto() {
+            var impuesto = 1.21;
+            precioConImpuesto = precio * impuesto; //? ayuda
+            var mgs = "El producto " + nombre + " de la marca " + marca + " tiene un precio de $" + precioConImpuesto;
+
+            document.writeln(mgs);
+        }
+
+        document.writeln("precio sin impuesto: $" + precio);
+        document.writeln("precio con impuesto: $" + precioConImpuesto);
+        
+        
+        
+        
+        
+        
+        
+        
       </script> 
 </body>
 </html>
