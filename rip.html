@@ -132,9 +132,37 @@
            document.getElementById("caja").style.backgroundColor = "blue";
         }
 
+ 
+        
+        
+        
     </script>
 
+ //---------------------------------------------------------------------------------------------------------------------------------------
+    
+  //No me sale bien donde poner el else para la opción incorrecta. 
+    
+    <h1 id="h1"></h1>
 
+<script>
+
+    var rolprompt = prompt("Cuál es su rol?");
+
+    if(rolprompt == "admin" || "recursos"){
+        var claveprompt = prompt("Cuál es la clave?");
+        if(parseInt(claveprompt) == 1234){
+            var nombreprompt = prompt("Cuál es su nombre de usuario?");
+        }
+    }
+
+    document.getElementById("h1").innerHTML = "Hola " +  nombreprompt + " " + "bienvenide a nuestra aplicación";
+
+
+</script>
+
+    
+    
+    
     
 </body>
 </html>
